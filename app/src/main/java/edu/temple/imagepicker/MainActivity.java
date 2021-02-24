@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
@@ -24,10 +26,15 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         spinner = findViewById(R.id.spinner);
 
-        String[] galaxyArray = new String[]{"Andromeda", "Black Eye", "Milky Way", "Sombrero"};
+        ArrayList galaxyArray = new ArrayList<String>();
+        galaxyArray.add("Andromeda");
+        galaxyArray.add("Black Eye");
+        galaxyArray.add("Milky Way");
+        galaxyArray.add("Sombrero");
         galaxyImageArray = new int[]{R.drawable.andromeda, R.drawable.blackeye, R.drawable.milkyway, R.drawable.sombrero};
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, galaxyArray);
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, galaxyArray);
+        GalaxyAdapter adapter = new GalaxyAdapter(this, galaxyArray);
         spinner.setAdapter(adapter);
 
 
