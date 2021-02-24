@@ -3,6 +3,7 @@ package edu.temple.imagepicker;
 import android.content.Context;
 import android.graphics.Color;
 import android.media.Image;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -49,6 +50,7 @@ public class GalaxyAdapter extends BaseAdapter {
 
         textView.setPadding(10,10,10,10);
         textView.setTextSize(25);
+        textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
 
         return textView;
     }
