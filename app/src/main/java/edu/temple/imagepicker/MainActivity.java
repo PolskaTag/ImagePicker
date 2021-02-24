@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         galaxyImageArray = new int[]{R.drawable.andromeda, R.drawable.blackeye, R.drawable.milkyway, R.drawable.sombrero};
 
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, galaxyArray);
-        GalaxyAdapter adapter = new GalaxyAdapter(this, galaxyArray);
+        GalaxyAdapter adapter = new GalaxyAdapter(this, galaxyArray, galaxyImageArray);
         spinner.setAdapter(adapter);
 
 
