@@ -44,11 +44,23 @@ public class GalaxyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        TextView textView = new TextView(context);
+        textView.setText(items.get(position));
+
+        textView.setPadding(10,10,10,10);
+        textView.setTextSize(25);
+
+        return textView;
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
         TextView textView;
         ImageView imageView;
 
         LinearLayout linearLayout;
 
+        // Recycler pattern
         if(convertView == null){
             linearLayout = new LinearLayout(context);
             textView = new TextView(context);
@@ -70,10 +82,5 @@ public class GalaxyAdapter extends BaseAdapter {
         textView.setText(items.get(position));
 
         return linearLayout;
-    }
-
-    @Override
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        return super.getDropDownView(position, convertView, parent);
     }
 }
